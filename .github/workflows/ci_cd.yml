@@ -31,13 +31,6 @@ jobs:
           name: version
           path: version.txt
 
-      - name: "Update Docker Hub description"
-        uses: peter-evans/dockerhub-description@v2.4.3
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-          DOCKERHUB_REPOSITORY: ${{ env.IMAGE_NAME }}
-
   build:
     runs-on: ubuntu-latest
     permissions:
@@ -93,15 +86,6 @@ jobs:
         env: # To allow downloading packages
           GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Docker Hub
-      - name: "Log into Docker Hub"
-        if: env.RELEASE_VERSION != ''
-        run: "echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin"
-
-      - name: "Push images to Docker Hub"
-        if: env.RELEASE_VERSION != ''
-        run: "docker push $IMAGE_NAME:$RELEASE_VERSION-${{ matrix.base }} && docker push $IMAGE_NAME:latest-${{ matrix.base }}"
 
       # GitHub
       - name: "Log into GitHub Packages"
