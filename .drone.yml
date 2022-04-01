@@ -14,7 +14,7 @@ steps:
   pull: if-not-exists
   commands:
     - hadolint --version
-    - hadolint Dockerfile*
+    - hadolint alpine/Dockerfile*
 
 - name: latest  
   image: thegeeklab/drone-docker-buildx
