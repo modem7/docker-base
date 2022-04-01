@@ -16,7 +16,7 @@ RUN tar xzf /tmp/s6-overlay-${CPU_ARCH}.tar.gz -C / && \
         # CVE-2021-36159
         apk-tools=2.12.7-r3 \
         # CVE-2021-3711, CVE-2021-3712
-        libssl1.1=1.1.1l-r8 && \
+        libssl1.1=1.1.1n-r0	&& \
     apk add --no-cache shadow=4.8.1-r1 && \
     rm /tmp/s6-overlay-${CPU_ARCH}.tar.gz
 

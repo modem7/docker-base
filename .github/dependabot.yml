@@ -1,39 +1,12 @@
 version: 2
-registries:
-  maven-github:
-    type: maven-repository
-    url: https://maven.pkg.github.com/homecentr
-    username: lholota
-    password: ${{ secrets.GH_PACKAGES_TOKEN }}
+
 updates:
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
-  labels:
-  - dependencies
-  commit-message:
-    prefix: ci
-    include: scope
+
 - package-ecosystem: docker
   directory: "/alpine"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
-  labels:
-  - dependencies
-  commit-message:
-    prefix: fix
-    include: scope
-- package-ecosystem: gradle
-  directory: "/tests"
-  registries: "*"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
-  labels:
-  - dependencies
-  commit-message:
-    prefix: chore
-    include: scope
