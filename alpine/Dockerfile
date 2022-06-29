@@ -2,8 +2,8 @@ FROM alpine:3.16.0
 
 LABEL maintainer="Lukas Holota <me@lholota.com>"
 
-ENV S6_VERSION="v2.2.0.3"
-ENV CPU_ARCH="amd64"
+ENV S6_VERSION="v3.1.1.1"
+ENV CPU_ARCH="x86_64"
 ENV PUID=7077
 ENV PGID=7077
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
