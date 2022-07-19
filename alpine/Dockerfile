@@ -28,7 +28,7 @@ RUN tar xzf /tmp/s6-overlay-${CPU_ARCH}.tar.gz -C / && \
     # These packages are included in the base image. They are explicitly upgrade to vulnerabilities below
     apk add --no-cache \
         apk-tools=2.12.9-r3 \
-        libssl1.1=1.1.1o-r0 \
+        libssl1.1=1.1.1q-r0	\
         shadow=4.10-r3 && \
     rm /tmp/s6-overlay-${CPU_ARCH}.tar.gz
 
