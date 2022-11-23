@@ -20,9 +20,9 @@ RUN DOCKER_ARCH=$(case ${TARGETPLATFORM:-linux/amd64} in \
 
 # These packages are included in the base image. They are explicitly upgrade to vulnerabilities below
 RUN apk add --no-cache \
-        apk-tools=2.12.9-r3 \
+        apk-tools=2.12.10-r1 \
         libssl1.1=1.1.1s-r0	\
-        shadow=4.10-r3
+        shadow=4.13-r0
 
 COPY ./fs /
 
