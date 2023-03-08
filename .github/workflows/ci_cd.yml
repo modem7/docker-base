@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@master
       
       - name: "Determine release version"
-        uses: docker://ghcr.io/codfish/semantic-release-action:v2.0.0
+        uses: docker://ghcr.io/codfish/semantic-release-action:v2.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
