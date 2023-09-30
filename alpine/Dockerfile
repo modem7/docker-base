@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:latest
 
-FROM alpine:3.17.1
+FROM alpine:3.18.4
 
 LABEL maintainer="Lukas Holota <me@lholota.com>"
 
